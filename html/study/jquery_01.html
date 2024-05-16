@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../../css/reset.css" />
+    <script src="../../js/jquery-1.11.2.min.js"></script>
+  </head>
+  <script>
+    $(function () {
+      //fast, slow
+      $("#up").click(function () {
+        $("#detail_list").stop().slideUp(1000);
+      });
+
+      $("#down").click(function () {
+        $("#detail_list").stop().slideDown(1000);
+      });
+
+      $("#hide").click(function () {
+        $("#detail_list").stop().hide(1000);
+      });
+      $("#show").click(function () {
+        $("#detail_list").stop().show(1000);
+      });
+
+      $("#fadeout").click(function () {
+        $("#detail_list").stop().fadeOut(1000);
+      });
+
+      $("#fadein").click(function () {
+        $("#detail_list").stop().fadeIn(1000);
+      });
+    });
+  </script>
+  <style>
+    .screenshot {width: 30%;margin: 50px auto; background-color: #fff;}
+    .screenshot img {width: 100%;}
+    .wrap {width: 60%;margin: 0 auto 300px;text-align: center;}
+  </style>
+    <body>
+      <div class="screenshot">
+        <img src="../../img/studyimg/screenshot/jquery_01.png" alt="" />
+      </div>
+      <div class="wrap">
+      <div id="detail_list">
+        <img src="../../img/studyimg/flower.jpg" alt="" />
+      </div>
+      <button id="up">slide감추기</button>
+      <button id="down">slide보이기</button>
+      <button id="hide">hide 숨기기</button>
+      <button id="show">show 보이기</button>
+      <button id="fadeout">fadeout 효과</button>
+      <button id="fadein">fadein 효과</button>
+    </div>
+    </body>
+</html>

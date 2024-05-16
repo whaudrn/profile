@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../../css/reset.css" />
+  </head>
+  <style>
+    @charset "utf-8";
+*,*:after, *:before { box-sizing: border-box; } 
+#box { width:50%; margin:0 auto; } 
+h2 { text-align: center; margin:60px 0; font-size: 3rem;} 
+.column { width:50%; float:left; overflow: hidden; } 
+.column img { width:100%; } 
+.hover01 img { transform: scale(1); transition:.3s ease-in-out; } 
+.hover01:hover img { transform: scale(1.3); } 
+.hover03 img { transform: scale(1.5); transition:.3s ease-in-out; } 
+.hover03:hover img { transform: scale(1); } 
+.hover05 img { transform: scale(1.5); margin-left:30px; transition:.3s ease-in-out; } 
+.hover05:hover img { margin-left:0; } 
+.hover06 img { transform: rotate(15deg) scale(1.4); margin-left:30px; transition:.3s ease-in-out; } 
+.hover06:hover img { transform: rotate(0) scale(1); } 
+.hover07 img { filter:blur(3px); transition:.3s ease-in-out; } 
+.hover07:hover img { filter:blur(0); } 
+.hover08 img { filter:grayscale(100%); transition:.3s ease-in-out; } 
+.hover08:hover img { filter:grayscale(0); } 
+.hover09 img { filter:sepia(100%); transition:.3s ease-in-out; } 
+.hover09:hover img { filter:sepia(0); } 
+.hover10 img { filter:grayscale(0) blur(0); transition:.3s ease-in-out; } 
+.hover10:hover img { filter:grayscale(100%) blur(3px); } 
+.hover11 img { opacity: 1; transition:.3s ease-in-out; } 
+.hover11:hover img { opacity:0.5; } 
+.hover12 { background: #1abc9c; } 
+.hover12 img { opacity: 1; transition:.3s ease-in-out; vertical-align: bottom; } 
+.hover12:hover img { opacity:0.5; } 
+.hover13:hover img { opacity: 1; animation: flash 1.5s; } 
+@keyframes flash {0% { opacity: 0.4; } 
+100% { opacity: 1; } 
+ }
+.hover14 { position: relative; } 
+ .hover14:before { position: absolute; top:0; left:-75%; z-index:2; content: ""; width:50%; height:100%; 
+                   background:linear-gradient(to right,rgba(255,255,255,0) 0%,
+ rgba(255,255,255,0.3) 100%); transform: skew(-25deg); } 
+.hover14:hover:before { animation:shine .75s; } 
+@keyframes shine {100% { left:125%; } 
+ }
+.hover15 { position: relative; } 
+.hover15:before { position: absolute; top:50%; left:50%; transform:translate(-50%,-50%); z-index: 2; content:""; display:block; width:0; height:0; 
+                  background: rgba(255,255,255,0.2); border-radius:100%; opacity: 0; } 
+.hover15:hover:before { animation:circle .75s; } 
+@keyframes circle { 
+ 0% { opacity: 1; } 
+ 40% { opacity:1; } 
+ 100% { width:200%; height:200%; opacity: 0; } 
+ }
+.screenshot {width: 30%;margin: 0 auto; background-color: #fff;}
+.screenshot img {width: 100%;}
+  </style>
+  <body>
+    <div class="screenshot">
+      <img src="../../img/studyimg/screenshot/css_03.png" alt="" />
+    </div>
+    <h2>result</h2>
+    <div id="box" class="cf">
+      <div class="column"><img src="../../img/studyimg/testimg.jpg" alt="effect" /></div>
+      <div class="hover01 column"><img src="../../img/studyimg/testimg.jpg" alt="effect" /></div>
+      <div class="hover03 column"><img src="../../img/studyimg/testimg.jpg" alt="effect" /></div>
+      <div class="hover05 column"><img src="../../img/studyimg/testimg.jpg" alt="effect" /></div>
+      <div class="hover06 column"><img src="../../img/studyimg/testimg.jpg" alt="effect" /></div>
+      <div class="hover07 column"><img src="../../img/studyimg/testimg.jpg" alt="effect" /></div>
+      <div class="hover08 column"><img src="../../img/studyimg/testimg.jpg" alt="effect" /></div>
+      <div class="hover09 column"><img src="../../img/studyimg/testimg.jpg" alt="effect" /></div>
+      <div class="hover10 column"><img src="../../img/studyimg/testimg.jpg" alt="effect" /></div>
+      <div class="hover11 column"><img src="../../img/studyimg/testimg.jpg" alt="effect" /></div>
+      <div class="hover12 column"><img src="../../img/studyimg/testimg.jpg" alt="effect" /></div>
+      <div class="hover13 column"><img src="../../img/studyimg/testimg.jpg" alt="effect" /></div>
+      <div class="hover14 column"><img src="../../img/studyimg/testimg.jpg" alt="effect" /></div>
+      <div class="hover15 column"><img src="../../img/studyimg/testimg.jpg" alt="effect" /></div>
+    </div>
+  </body>
+</html>

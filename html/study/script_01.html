@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../../css/reset.css" />
+  </head>
+  <style>
+    @charset "utf-8";
+
+    *,*:after,*:before {box-sizing:border-box;}
+    body {background: #000;}
+    #container{ width:1000px;  margin:20px auto;}
+    #navi{width:300px; float:left;		}
+    #navi ul{height:460px;	}
+    #navi ul li{width:150px;float:left;	}
+    #navi ul li img{border:3px solid #fff;	}
+    #main{width:650px; float:right; margin-right:7px;}
+    #main img{border:3px solid #fff;}
+    .screenshot {width: 30%;margin: 50px auto;color: #fff;font-size: 30px;}
+    .screenshot img{width: 100%;margin-top: 30px;}
+    </style>
+  <body>
+    <div class="screenshot">Script_01. for반복문과 Attribute 의 사용<img src="../../img/studyimg/screenshot/script_01.png" alt=""></div>
+    <div id="container" class="cf">
+      <div id="navi">
+        <ul class="cf">
+            <li><a href="../../img/studyimg/photo1.jpg"><img src="../../img/studyimg/photo1_thum.jpg" alt="샹제리아" /></a></li>
+            <li><a href="../../img/studyimg/photo2.jpg"><img src="../../img/studyimg/photo2_thum.jpg" alt="장미" /></a></li>
+            <li><a href="../../img/studyimg/photo3.jpg"><img src="../../img/studyimg/photo3_thum.jpg" alt="바다" /></a></li>
+            <li><a href="../../img/studyimg/photo4.jpg"><img src="../../img/studyimg/photo4_thum.jpg" alt="문" /></a></li>
+            <li><a href="../../img/studyimg/photo5.jpg"><img src="../../img/studyimg/photo5_thum.jpg" alt="바다" /></a></li>
+            <li><a href="../../img/studyimg/photo6.jpg"><img src="../../img/studyimg/photo6_thum.jpg" alt="자양화" /></a></li>
+            <li><a href="../../img/studyimg/photo7.jpg"><img src="../../img/studyimg/photo7_thum.jpg" alt="하늘" /></a></li>
+            <li><a href="../../img/studyimg/photo8.jpg"><img src="../../img/studyimg/photo8_thum.jpg" alt="건물" /></a></li>
+          </ul>
+      </div>
+      <!-- #navi 종료 -->
+      <div id="main">
+        <img src="../../img/studyimg/photo1.jpg" alt="자양화" />
+      </div>
+    </div>
+    <!-- #container 종료 -->
+
+    <script>
+      const bigPic = document.querySelector("#main img");
+      const smallPics = document.querySelectorAll("#navi ul li a");
+
+      for (i = 0; i < smallPics.length; i++) {
+        smallPics[i].addEventListener("click", function (e) {
+          const newPic = this.href;
+          bigPic.setAttribute("src", newPic);
+          e.preventDefault(); //a태그의 본래 속성을 중단
+        });
+      }
+    </script>
+  </body>
+</html>

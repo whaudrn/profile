@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../../css/reset.css" />
+    <script src="../../js/jquery-1.11.2.min.js"></script>
+  </head>
+  <script>
+    // 실시간 리스트
+    $(function () {
+      var ticker = function () {
+        setTimeout(function () {
+          $("#ticker li:first").animate(
+            { marginTop: "-55px" },
+            400,
+            function () {
+              $(this).detach().appendTo("ul#ticker").removeAttr("style");
+            }
+          );
+          ticker();
+        }, 3000);
+      };
+      ticker();
+    });
+
+    // 현재시간
+    $(function () {
+      setInterval(displayNow, 1000);
+      function displayNow() {
+        const date = new Date();
+        const hours = date.getHours();
+        const minutes = date.getMinutes();
+        const seconds = date.getSeconds();
+        let h, m, s;
+        if (hours < 10) {
+          h = "0" + hours;
+        } else {
+          h = hours;
+        }
+        if (minutes < 10) {
+          m = "0" + minutes;
+        } else {
+          m = minutes;
+        }
+        if (seconds < 10) {
+          s = "0" + seconds;
+        } else {
+          s = seconds;
+        }
+        $(".tt span").eq(0).text(h);
+        $(".tt span").eq(1).text(m);
+        $(".tt span").eq(2).text(s);
+      }
+    });
+  </script>
+  <style>
+      .screenshot {width: 30%;margin: 50px auto; background-color: #fff;}
+      .screenshot img {width: 100%;}
+      section.main03 { padding: 150px 0; max-width: 1200px; margin: 0 auto; } 
+      section.main03 .main03-left { width: 40%; float: left; padding-top: 50px; } 
+      section.main03 h2 { font-size: 32px; line-height: 1.5; } 
+      section.main03 h2 span { color: #2f9d3b; } 
+      section.main03 .main03-right .boxtr { background: #f7f7f7; border-top: 2px solid #2f9d3b; border-bottom: 1px solid #ddd; } 
+      section.main03 .main03-right .boxtr ul li,
+      section.main03 .main03-right .boxIn ul li { display: grid; grid-template-columns: 1fr 1fr 0.5fr; text-align: center; } 
+      section.main03 .main03-right .boxtr ul li div { border-right: 1px solid #ddd; padding: 15px 0; } 
+      section.main03 .main03-right .boxtr ul li div:last-child { border-right: 0; } 
+      section.main03 .main03-right .boxIn ul li div { border-right: 1px solid #ddd; padding: 15px 0; border-bottom: 1px solid #ddd; } 
+      section.main03 .main03-right .boxIn ul li div:last-child { border-right: 0; } 
+      .boxIn { height: 55px; overflow: hidden;margin-bottom: 300px; } 
+      .span-btn-bottom a { transform: translateY(0px); animation: none !important; } 
+      section.main03 .main03-right { width: 60%; float: left; } 
+      section.main03 .main03-right h3 { text-align: right; margin-bottom: 35px; } 
+      section.main03 .main03-right h3 span { padding: 0 10px; text-align: center; background: #ddd; } 
+  </style>
+    <body>
+      <div class="screenshot">
+        <img src="../../img/studyimg/screenshot/jquery_06.png" alt="" />
+      </div>
+      <section class="main03 cf">
+        <div class="main03-left">
+          <h2>
+            ABCBANK만의 차별화된<br />
+            <span>전문가의 상담</span>을 쉽고 편리하게<br />
+          </h2>
+          <span class="span-btn span-btn-bottom">
+            <a href="javascript: ;">온라인 문의</a>
+          </span>
+        </div>
+        <div class="main03-right">
+          <h3 class="tt">
+            BANK 상담 현황
+            <span>00</span> : <span>00</span> : <span>00</span>
+          </h3>
+          <div class="box">
+            <div class="boxtr">
+              <ul>
+                <li>
+                  <div>이름</div>
+                  <div>연락처</div>
+                  <div>현황</div>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="boxIn">
+            <ul id="ticker">
+              <li>
+                <div>이영* 님 상담문의</div>
+                <div>010-1111-1****</div>
+                <div>상담 진행중</div>
+              </li>
+              <li>
+                <div>홍길* 님 상담문의</div>
+                <div>010-1111-1****</div>
+                <div>상담 진행중</div>
+              </li>
+              <li>
+                <div>김진* 님 상담문의</div>
+                <div>010-1111-1****</div>
+                <div>상담 진행중</div>
+              </li>
+              <li>
+                <div>박성* 님 상담문의</div>
+                <div>010-1111-1****</div>
+                <div>상담 진행중</div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>    
+    </body>
+</html>

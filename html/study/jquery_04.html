@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../../css/reset.css" />
+    <script src="../../js/jquery-1.11.2.min.js"></script>
+  </head>
+  <script>  
+    $(function(){
+	$("select").on("change",function(){
+		const ab=$(this).val();
+        const $lis = $("ul>li");
+		const n = ab.substr(4,1) ; 
+		const sort = $lis.sort(function(a,b){
+			if(n==0){   
+              location.reload(true);                          
+            }else if(n == 1){
+				return new Date($(a).find("span.date").text()) > 
+				new Date($(b).find("span.date").text()) ? -1 :
+				new Date($(a).find("span.date").text()) < 
+				new Date($(b).find("span.date").text()) ? 1 : 0;
+			}else if(n == 2){
+	return parseInt($(a).find("span.price").text().replace(/[^0-9]/g,'')) >
+	parseInt($(b).find("span.price").text().replace(/[^0-9]/g,'')) ? -1 :
+	parseInt($(a).find("span.price").text().replace(/[^0-9]/g,'')) < 
+	parseInt($(b).find("span.price").text().replace(/[^0-9]/g,'')) ? 1 : 0;
+    }else{
+	return parseInt($(a).find("span.price").text().replace(/[^0-9]/g,'')) <
+	parseInt($(b).find("span.price").text().replace(/[^0-9]/g,'')) ? -1 :
+	parseInt($(a).find("span.price").text().replace(/[^0-9]/g,'')) >
+	parseInt($(b).find("span.price").text().replace(/[^0-9]/g,'')) ? 1 : 0;
+   }
+  });
+	   $("#content ul").html(sort);
+ });
+});
+  </script>
+  <style>
+     .screenshot {width: 30%;margin: 50px auto; background-color: #fff;}
+    .screenshot img {width: 100%;}
+    a {	color:#4f4f4f;	text-decoration:none;} 
+a:hover {color:#f00;text-decoration:underline;}
+#content {width:600px; margin:30px auto;   font-size:0.8rem;}
+.depth {	float:right;color:#9c9b9b;}
+.current {	color:#51a41e; }
+h2 {background:url(../img/icon_submenu.gif) repeat-x bottom;
+    margin-bottom:30px; }
+#content h2 img {padding:3px 0 9px 1px;}    
+#content ul { 	margin-left:15px;}
+#content ul li {float:left;	height:167px; 	margin:0 30px 28px 30px; }
+#content ul li span {display:block;padding-top:5px;text-align:center;}
+span.date {text-align:center;font-size:1em;color:#9b9b9b;padding-top:2px;}
+#content ul li a img {	border:4px solid #e3e3e3;}
+#content ul li a:hover img {border:4px solid #69F;}
+.search {width:60%;margin:30px auto;text-align:center;
+         height:40px;line-height:40px;}
+.search >ul  {width:100%;}         
+.search> ul >li {width:33%;height:25px; float:left; cursor:pointer; }
+
+.search {width:30%;margin:30px auto;text-align:center;}
+select {width:50%;height:25px; outline:none; }
+  </style>
+    <body>
+      <div class="screenshot">
+        <img src="../../img/studyimg/screenshot/jquery_04.png" alt="" />
+      </div>
+      <div class="search">
+        <select class="form" name="ff" id="ff">
+          <option value="case0">선택</option>
+          <option value="case1">최신순</option>
+          <option value="case2">높은가격</option>
+          <option value="case3">낮은가격</option>
+        </select>	
+      </div>
+      
+      <div id="content" class="cf">
+       <p class="depth">
+        Home &gt; 자료실 &gt; 
+        <strong class="current">이미지 자료</strong>
+       </p>
+       <h2><img src="../../img/studyimg/h1_images.gif" alt="이미지 자료" /></h2> 
+       <ul class="cf">
+       <li>
+        <a href="#"><img src="../../img/studyimg/imgpds_01.gif" alt=""></a>
+        <span class="nn"><a href="#">이미지 갤러리1 </a></span>
+        <span class="date">2016/10/12</span>
+        <span class="price">45,000원</span>
+       </li>
+       <li>
+        <a href="#"><img src="../../img/studyimg/imgpds_02.gif" alt=""></a>
+        <span class="nn"><a href="#">이미지 갤러리2 </a></span>
+        <span class="date">2016/11/15</span>
+        <span class="price">90,000원</span>
+       </li>
+       <li>
+        <a href="#"><img src="../../img/studyimg/imgpds_03.gif" alt=""></a>
+        <span class="nn"><a href="#">이미지 갤러리3 </a></span>
+        <span class="date">2016/11/16</span>
+        <span class="price">30,000원</span>
+       </li>
+       <li>
+        <a href="#"><img src="../../img/studyimg/imgpds_06.gif" alt=""></a>
+        <span class="nn"><a href="#">이미지 갤러리4 </a></span>
+        <span class="date">2016/11/17</span>
+        <span class="price">15,000원</span>
+       </li>
+       <li>
+        <a href="#"><img src="../../img/studyimg/img01.jpg" alt=""></a>
+        <span class="nn"><a href="#">이미지 갤러리5 </a></span>
+        <span class="date">2016/11/18</span>
+        <span class="price">55,000원</span>
+       </li>
+       <li>
+        <a href="#"><img src="../../img/studyimg/img02.jpg" alt=""></a>
+        <span class="nn"><a href="#">이미지 갤러리6 </a></span>
+        <span class="date">2016/11/19</span>
+        <span class="price">5,000원</span>
+       </li>
+       </ul>
+      </div>
+       
+    </body>
+</html>
