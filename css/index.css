@@ -87,7 +87,7 @@ header { display: none; position: fixed; width: 100%; z-index: 999; background-c
 .study_select ul li.active { background-color: #0bceaf; color: #fff; } 
 .studyfilter_box {display: flex;flex-wrap: wrap; justify-content: center;margin-bottom: 20px;}
 .study_box {display: flex;flex-wrap: wrap;gap: 2%; justify-content: start;margin-top: 50px;}
-.study_box .study_item {width: 49%;margin-bottom: 2%; padding: 5px; background-color: #fff ;border: 1px solid #fbe0fa;cursor: pointer;}
+.study_box .study_item {width: 49%;margin-bottom: 2%; padding: 5px; background-color: #fff ;border: 1px solid #fbe0fa;border-radius: 5px; cursor: pointer;box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);}
 .study_box .study_item a {display: block;}
 .study_box .study_item:hover {background-color: #fbe0fa;}
 .study_text {margin:30px 0 100px; font-size: small;}
