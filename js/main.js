@@ -35,15 +35,14 @@ $(document).ready(function () {
     }
   }
 
-    // 페이지 로드 시 네비게이션 리스트 초기 상태 설정
+  // 페이지 로드 시 네비게이션 리스트 초기 상태 설정
+  setNavListVisibility();
+
+  // 윈도우 크기 변경 시 네비게이션 리스트 상태 업데이트
+  $(window).resize(function () {
     setNavListVisibility();
+  });
 
-    // 윈도우 크기 변경 시 네비게이션 리스트 상태 업데이트
-    $(window).resize(function () {
-      setNavListVisibility();
-    });
-
-    
   // 햄버거 버튼을 클릭하면 메뉴를 토글
   $(".ham_img").click(function (event) {
     event.stopPropagation();
@@ -54,7 +53,7 @@ $(document).ready(function () {
   $(document).click(function (event) {
     // 현재 화면 너비를 가져옵니다.
     var screenWidth = $(window).width();
-    
+
     // 화면 너비가 761px 이하인 경우에만 이벤트 핸들러를 실행합니다.
     if (screenWidth <= 761) {
       var target = $(event.target);
@@ -65,8 +64,7 @@ $(document).ready(function () {
   });
   // 메뉴 항목을 클릭하면 메뉴를 닫음
   if ($(window).width() < 761) {
-    $(".navlist").click(function () {
-   
+    $(".navlist a").click(function () {
       $(".navlist").slideUp();
     });
   }
