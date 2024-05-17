@@ -67,12 +67,10 @@ header { display: none; position: fixed; width: 100%; z-index: 999; background-c
 
 /* (모바일) Portfolio 섹션 영역 시작 */
 #portfolio { width: 90%; height: 100%; margin: 0 auto; overflow: hidden; } 
-.portfolio_select ul { display: flex; justify-content: center; gap: 10px; margin-bottom: 30px; } 
+.portfolio_select ul { display: flex;flex-wrap: wrap; justify-content: center; gap: 10px; margin-bottom: 30px; } 
 .portfolio_select ul li { width: auto; padding: 10px 20px; border-radius: 30px; border: 1px solid #0bceaf; line-height: 1.6; color: #0bceaf; cursor: pointer; } 
 .portfolio_select ul li:hover,
 .portfolio_select ul li.active { background-color: #0bceaf; color: #fff; } 
-/* .portfolio_select .first { margin-bottom: 20px; background-color: #fbe0fa; border: 1px solid transparent; } 
-.portfolio_select .second {margin-bottom: 20px; background-color: #e0e8fb; border: 1px solid transparent; }  */
 .portfolio_select .third {background-color: #e9eeee; border: 1px solid transparent;}
 .portfolio_mobile { width: 100%; height: auto; margin: 30px auto; } 
 .portfolio_rwd { width: 100%; margin: 30px auto; } 
