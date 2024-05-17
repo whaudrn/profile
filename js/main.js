@@ -24,14 +24,26 @@ $(document).ready(function () {
   });
 });
 
-// navlist 기본 숨김
 $(document).ready(function () {
-  if ($(window).width() < 761) {
-    $(".navlist").hide();
-  } else {
-    $(".navlist").show();
+  // 네비게이션 리스트의 초기 상태 설정
+  function setNavListVisibility() {
+    var screenWidth = $(window).width();
+    if (screenWidth < 761) {
+      $(".navlist").hide();
+    } else {
+      $(".navlist").show();
+    }
   }
 
+    // 페이지 로드 시 네비게이션 리스트 초기 상태 설정
+    setNavListVisibility();
+
+    // 윈도우 크기 변경 시 네비게이션 리스트 상태 업데이트
+    $(window).resize(function () {
+      setNavListVisibility();
+    });
+
+    
   // 햄버거 버튼을 클릭하면 메뉴를 토글
   $(".ham_img").click(function (event) {
     event.stopPropagation();
@@ -53,8 +65,8 @@ $(document).ready(function () {
   });
   // 메뉴 항목을 클릭하면 메뉴를 닫음
   if ($(window).width() < 761) {
-    $(".navlist").click(function (event) {
-      event.stopPropagation();
+    $(".navlist").click(function () {
+   
       $(".navlist").slideUp();
     });
   }
