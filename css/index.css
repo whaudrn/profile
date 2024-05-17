@@ -80,17 +80,17 @@ header { display: none; position: fixed; width: 100%; z-index: 999; background-c
 .plus { position: absolute; transform: translate(-50%, -50%); top: 50%; left: 50%; font-size: 60px; color: #fff; } 
 
 /* (모바일) study 섹션 영역 시작 */
-#study { width: 90%; height: 100%; margin: 0 auto 50px; overflow: hidden; } 
+#study { width: 90%; height: 100%; margin: 0 auto 200px; overflow: hidden; } 
 .study_select ul { display: flex; justify-content: center; gap: 10px; margin-bottom: 30px; } 
 .study_select ul li { width: auto; padding: 10px 20px; border-radius: 30px; border: 1px solid #0bceaf; line-height: 1.6; color: #0bceaf; cursor: pointer; } 
 .study_select ul li:hover,
 .study_select ul li.active { background-color: #0bceaf; color: #fff; } 
 .studyfilter_box {display: flex;flex-wrap: wrap; justify-content: center;margin-bottom: 20px;}
-.study_box {display: flex;flex-wrap: wrap;gap: 2%; justify-content: start;}
+.study_box {display: flex;flex-wrap: wrap;gap: 2%; justify-content: start;margin-top: 50px;}
 .study_box .study_item {width: 49%;margin-bottom: 2%; padding: 5px; background-color: #fff ;border: 1px solid #fbe0fa;cursor: pointer;}
 .study_box .study_item a {display: block;}
 .study_box .study_item:hover {background-color: #fbe0fa;}
-.study_text {font-size: small;}
+.study_text {margin:30px 0 200px; font-size: small;}
 
 /* scrolltop */ 
 .top_btn { display: none; position: fixed; right: 30px; bottom: 30px; padding: 15px 10px; z-index: 9999; border-radius: 20px; border: 1px solid #8e9092; background-color: #fff; animation: action 1s infinite alternate; cursor: pointer; box-shadow: 0 0 0 0.2rem rgba(21, 22, 22, 0.25); } 
